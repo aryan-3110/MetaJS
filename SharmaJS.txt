@@ -1,0 +1,48 @@
+class NFT {
+  constructor(name, age, color, gender) {
+    this.name = name;
+    this.age = age;
+    this.color = color;
+    this.gender = gender;
+  }
+}
+
+class NFTCollection {
+  constructor() {
+    this.nfts = [];
+  }
+
+  mintNFT(name, age, color, gender) {
+    const nft = new NFT(name, age, color, gender);
+    this.nfts.push(nft);
+    console.log("Minted:", name);
+  }
+
+  listNFTs() {
+    for (let i = 0; i < this.nfts.length; i++) {
+      const nft = this.nfts[i];
+      console.log("\nID:\t", i + 1);
+      console.log("Name:", nft.name);
+      console.log("Age:", nft.age);
+      console.log("Color:", nft.color);
+      console.log("Gender:", nft.gender);
+    }
+  }
+
+  getTotalSupply() {
+    console.log("\nTotal number of NFTs:", this.nfts.length);
+  }
+}
+
+// Create an instance of NFTCollection
+const nftCollection = new NFTCollection();
+
+// Call your functions below this line
+nftCollection.mintNFT("Dhruv", 19, "Brown", "M");
+nftCollection.mintNFT("Chris", 25, "White", "M");
+nftCollection.mintNFT("BOB", 23, "Black", "M");
+nftCollection.mintNFT("Isha", 27, "Brown", "F");
+nftCollection.mintNFT("Jatin", 20, "Brown", "M");
+
+nftCollection.listNFTs();
+nftCollection.getTotalSupply();
